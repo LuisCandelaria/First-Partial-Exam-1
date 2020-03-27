@@ -5,26 +5,29 @@ div{
     padding: 5px;
 }
 
-.container, .heading, .navigation, .nav-box{
+.container, .heading, .navigation, .nav-box, .content, .side, .side-box, .main, .main-box{
     border: 1px solid black;
-    display: flexbox;
+    display: flex;
 }
 
 .container{
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.navigation{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 @media(max-width: 600px){
-    .heading{
+    .heading, .content{
         display: none;
     }
-    .navigation{
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: column;
-    }
     .nav-box{
-        width: 45%
+        width: 45%;
     }
 }
 
@@ -32,11 +35,62 @@ div{
     .heading{
         display: none;
     }
+    .nav-box{
+        width: 22%;
+    }
+    .content{
+        display: flex;
+        width: 100%;
+    }
+    .side{
+        width: 30%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .main{
+        width: 70%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .main-box{
+        width: 100%;
+    }
+    .side-box{
+        width: 100%;
+        height: 20px;
+        margin-top: 1px;
+    }
+    .special-side-box{
+        margin-bottom: 1px;
+        margin-top: 230px;
+    }
 }
 
 @media(min-width: 990px){
     .heading{
         display: flex;
+        width: 100%;
+    }
+    .heading-box{
+        width: 30%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .main{
+        flex-direction: row;
+        flex-wrap: initial;
+    }
+    .main-box{
+        width: 45%;
+    }
+    .nav-box{
+        width: 11%;
+    }
+    .side-box{
+        width: 100%;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        height: 25%;
     }
 }
 
